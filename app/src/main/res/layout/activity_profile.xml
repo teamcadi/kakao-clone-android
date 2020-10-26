@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/iv_profile"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/kakao_profile"
+        app:layout_constraintBottom_toTopOf="@+id/btn_chat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +28,19 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
 
     <Button
+        android:id="@+id/btn_profileEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="통화하기"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintVertical_bias="0.942" />
+
+    <Button
         android:id="@+id/btn_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,21 +51,10 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_profileEdit" />
 
     <Button
-        android:id="@+id/btn_profileEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="통화하기"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
-
-    <Button
         android:id="@+id/btn_kakaostory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="36dp"
         android:text="카카오스토리"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn_profileEdit"
