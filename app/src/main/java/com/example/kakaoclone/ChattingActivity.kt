@@ -22,9 +22,6 @@ class ChattingActivity : AppCompatActivity() {
 
         val adapter = ChatAdpater(this, list_chat)
 
-        adapter.addItem("dd")
-        lv_chat.adapter = adapter
-
         btn_input.setOnClickListener {
             adapter.addItem(edit_chat.text.toString())
             lv_chat.adapter = adapter
