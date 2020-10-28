@@ -9,7 +9,9 @@
         android:id="@+id/img_friendslist_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.5"
+
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"

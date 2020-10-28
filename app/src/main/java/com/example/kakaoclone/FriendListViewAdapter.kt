@@ -1,9 +1,9 @@
 package com.example.kakaoclone
 
-import android.R
 import android.content.Context
 import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.shapes.OvalShape
+import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,10 +41,11 @@ class FriendListViewAdapter(val listViewItemList: List<User>) : BaseAdapter() {
         }
 
         val listViewItem: User = listViewItemList[pos]
-        convertView!!.img_friendslist_image.background = ShapeDrawable(OvalShape())
-        convertView!!.img_friendslist_image.setClipToOutline(true)
 
+//        convertView!!.img_friendslist_image.background = ShapeDrawable(OvalShape())
+//        convertView!!.img_friendslist_image.setClipToOutline(true)
         convertView!!.img_friendslist_image.setImageDrawable(listViewItem.image)
+
         convertView!!.tv_friendslist_message.text = listViewItem.message
         convertView!!.tv_friendslist_name.text = listViewItem.name
         convertView!!.btn_list_song.text = listViewItem.song

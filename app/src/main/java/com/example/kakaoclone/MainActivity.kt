@@ -1,6 +1,5 @@
 package com.example.kakaoclone
 
-import android.R
 import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -24,15 +23,10 @@ class MainActivity : AppCompatActivity() {
         listView_Shape.setOnItemClickListener { parent, v, position, id ->
             val item: User = parent.getItemAtPosition(position) as User
             val nextIntent = Intent(this, ProfileActivity::class.java)
-            val putExtra = nextIntent.putExtra("name", item.name)
-
-           //com.example.kakaoclone.R.drawable.user_1 부분을 item.image로 바꿔야됨
-            val bitmap = BitmapFactory.decodeResource(Resources.getSystem(), com.example.kakaoclone.R.drawable.user_1)
-            val stream = ByteArrayOutputStream()
-            bitmap.compress(CompressFormat.JPEG, 100, stream)
-            val byteArray: ByteArray = stream.toByteArray()
-            nextIntent.putExtra("image", byteArray)
-
+            nextIntent.putExtra("name", item.name)
+//
+//           nextIntent.putExtra("id",""+item.id)
+//
             startActivity(nextIntent)
         }
     }
