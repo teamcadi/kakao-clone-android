@@ -15,7 +15,7 @@ class ProfileActivity : AppCompatActivity() {
         var btn_chat = findViewById<Button>(R.id.btn_chat)
 
 
-        tv_name.setText(getIntent().getStringExtra("name"))
+        tv_name.text = intent.getStringExtra("name")
 
         btn_chat.setOnClickListener {
             startActivity(Intent(this, ChattingActivity::class.java))
