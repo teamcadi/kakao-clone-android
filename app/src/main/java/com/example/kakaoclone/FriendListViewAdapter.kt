@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_friend_list.view.*
 
 
@@ -44,7 +45,7 @@ class FriendListViewAdapter(val listViewItemList: List<User>) : BaseAdapter() {
 
 //        convertView!!.img_friendslist_image.background = ShapeDrawable(OvalShape())
 //        convertView!!.img_friendslist_image.setClipToOutline(true)
-        convertView!!.img_friendslist_image.setImageDrawable(listViewItem.image)
+        convertView!!.img_friendslist_image.setImageDrawable(listViewItem.image ?:  ContextCompat.getDrawable(context, R.drawable.kakao_profile)!! )
 
         convertView!!.tv_friendslist_message.text = listViewItem.message
         convertView!!.tv_friendslist_name.text = listViewItem.name

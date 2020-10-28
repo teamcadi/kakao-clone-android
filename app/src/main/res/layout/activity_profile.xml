@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/kakao_profile"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_chat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/kakao_profile" />
 
     <TextView
         android:id="@+id/tv_name"

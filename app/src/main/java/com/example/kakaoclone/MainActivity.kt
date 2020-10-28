@@ -18,15 +18,13 @@ class MainActivity : AppCompatActivity() {
         val list = getUsers(this)
         val adapter = FriendListViewAdapter(list)
 
-        listView_Shape.adapter =adapter
+        listView_Shape.adapter = adapter
 
         listView_Shape.setOnItemClickListener { parent, v, position, id ->
             val item: User = parent.getItemAtPosition(position) as User
             val nextIntent = Intent(this, ProfileActivity::class.java)
-            nextIntent.putExtra("name", item.name)
-//
-//           nextIntent.putExtra("id",""+item.id)
-//
+
+            nextIntent.putExtra("id", item.id)
             startActivity(nextIntent)
         }
     }

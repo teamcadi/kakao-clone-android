@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.activity_friend_list.*
 import kotlinx.android.synthetic.main.activity_profile.*
 import java.lang.Integer.parseInt
 
@@ -15,12 +17,11 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        tv_name.text = intent.getStringExtra("name")
-//        var id = intent.getStringExtra("id")
-//
-//        val c = Integer.parseInt(id)
-//
-//        iv_profile.setImageDrawable( getUsers(this).get(c-1).image)
+        val userList = getUsers(this)
+        val userId = intent.getIntExtra("id", 0)
+
+        tv_name.text = userList[userId-1].name
+        iv_profile.setImageDrawable(userList[userId-1].image ?:  ContextCompat.getDrawable(this, R.drawable.kakao_profile)!!)
 
         btn_chat.setOnClickListener {
             startActivity(Intent(this, ChattingActivity::class.java))
