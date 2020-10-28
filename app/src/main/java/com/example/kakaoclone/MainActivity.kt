@@ -1,15 +1,15 @@
 package com.example.kakaoclone
 
 import android.content.Intent
+import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.Bitmap.CompressFormat
+import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.AdapterView.OnItemClickListener
-import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_friend_list.view.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.ByteArrayOutputStream
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         listView_Shape.setOnItemClickListener { parent, v, position, id ->
             val item: User = parent.getItemAtPosition(position) as User
-            val nextIntent = Intent(this,ProfileActivity::class.java)
-            nextIntent.putExtra("name",item.name)
+            val nextIntent = Intent(this, ProfileActivity::class.java)
+            nextIntent.putExtra("name", item.name)
+//
+//           nextIntent.putExtra("id",""+item.id)
+//
             startActivity(nextIntent)
         }
     }
